@@ -45,16 +45,10 @@ return(
   <input type="text" onChange={(e)=>{setLoginData({...loginData,placeName:e.target.value})}} placeholder="Enter place name" className="form-control" id="placeName"/>
 </div>
 <div className="mx-3 my-3 shadow">
-  <input type="number" onChange={(e)=>{setLoginData({...loginData,price:e.target.value})}} placeholder="Enter contact" className="form-control" id="price"/>
+  <input type="number" onChange={(e)=>{setLoginData({...loginData,price:e.target.value})}} placeholder="Enter price" className="form-control" id="price"/>
 </div>
 <div className="mx-3">
-<select id="gId" className="form-select" onChange={(e)=>{setLoginData({...loginData,gId:e.target.value})}} aria-label="Default select example">
-  <option selected>Open this select menu</option>
-  <option>{treks.length>0?treks.map(item=>{
-      item.trekName
-  }):'No Treks'}
-  </option>
-</select>
+<input type="number" onChange={(e)=>{setLoginData({...loginData,gId:e.target.value})}} placeholder="Enter guide Id" className="form-control" id="gId"/>
 </div>
 <button type="submit" className="btn btn-outline-dark shadow mx-3 my-3">Submit</button>
         </form>
