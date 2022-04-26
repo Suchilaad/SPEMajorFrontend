@@ -47,8 +47,11 @@ return(
 <div className="mx-3 my-3 shadow">
   <input type="number" onChange={(e)=>{setLoginData({...loginData,price:e.target.value})}} placeholder="Enter price" className="form-control" id="price"/>
 </div>
-<div className="mx-3">
+<div className="mx-3 my-3 shadow">
 <input type="number" onChange={(e)=>{setLoginData({...loginData,gId:e.target.value})}} placeholder="Enter guide Id" className="form-control" id="gId"/>
+</div>
+<div className="mx-3 my-3 shadow">
+<input type="text" onChange={(e)=>{setLoginData({...loginData,imageId:e.target.value})}} placeholder="Enter Image name" className="form-control" id="imageId"/>
 </div>
 <button type="submit" className="btn btn-outline-dark shadow mx-3 my-3">Submit</button>
         </form>

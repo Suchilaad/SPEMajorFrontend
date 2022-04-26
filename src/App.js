@@ -3,13 +3,19 @@ import './App.css';
 import Form from './Components/Form';
 import UserComponent from './Components/UserComponent';
 import GuideForm from './Components/GuideForm';
+import PlaceComponent from './Components/PlaceComponent';
+import CustNavbar from './Components/CustNavbar';
+import Home from './Components/Home';
 
 function App() {
   return (
     <>
-    <UserComponent></UserComponent>
-    <Form></Form>
-    <GuideForm></GuideForm>
+    {/* <CustNavbar></CustNavbar> */}
+    {/* <PlaceComponent></PlaceComponent> */}
+    {/* <Form></Form> */}
+    {/* <GuideForm></GuideForm> */}
+  {/* <UserComponent></UserComponent> */}
+    <Home></Home>
     </>
   );
 }
