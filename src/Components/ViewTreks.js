@@ -3,7 +3,7 @@ import 'animate.css';
 import React from 'react';
 import UserService from '../service/UserService';
 
-class PlaceComponent extends React.Component {
+class ViewTreks extends React.Component {
 
     constructor(props){
         super(props)
@@ -19,12 +19,8 @@ class PlaceComponent extends React.Component {
     }
 
     render (){
-        const setValue=(pId)=>{
-            sessionStorage.setItem("placeId",pId)
-        }
         return (
             <div>
-                <p style={{color:'white'}}>{sessionStorage.getItem('emailId')}</p>
                 <div className="row my-3 mx-3">
                                 
                         {
@@ -36,7 +32,7 @@ class PlaceComponent extends React.Component {
                                     <img src={trek.imageId} className="card-img-top mx-2 my-2" style={{width:"400px"}}/>
                                       <h5 className="card-title">{trek.trekName},{trek.placeName}</h5>
                                       <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                      <a href='/bookNow'><button className='btn btn-primary' style={{borderRadius:'12px'}} onClick={()=>{setValue(trek.pId)}}>Book now</button></a>
+                                      <a href="#" className="btn btn-primary shadow float-middle" style={{borderRadius:"12px"}}>Book now</a>
                                     </div>
                                   </div>
                                 </div>
@@ -51,5 +47,5 @@ class PlaceComponent extends React.Component {
     }
 }
 
-export default PlaceComponent
+export default ViewTreks
 
