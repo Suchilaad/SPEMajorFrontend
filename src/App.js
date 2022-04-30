@@ -97,10 +97,14 @@ function App() {
           <HomeDisplay/>
           <SignUp/>
           </Route>
-          <Route path="/login" component={HomeDisplay}>
+          <Route path="/login">
+          <HomeNavbar/>
+          <HomeDisplay/>
           <Login/>
           </Route>
-          <Route exact path="/" component={HomeNavbar}>
+          <Route exact path="/">
+          <HomeNavbar/>
+          <HomeDisplay/>
           </Route>
         </Router>
         </>  
