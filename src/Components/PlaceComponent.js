@@ -24,7 +24,6 @@ class PlaceComponent extends React.Component {
         }
         return (
             <div>
-                <p style={{color:'white'}}>{sessionStorage.getItem('emailId')}</p>
                 <div className="row my-3 mx-3">
                                 
                         {

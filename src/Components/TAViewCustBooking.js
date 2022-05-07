@@ -1,34 +1,67 @@
-import React from 'react'
 
-export default function TAViewCustBooking() {
-  return (
-    <>
-    <div className='d-flex justify-content-center my-5'>
-   <form className="d-flex rounded float-start">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-light shadow mx-3" style={{borderRadius:'12px'}} type="submit">Search</button>
-      </form>
-      </div>
-    <div>
-    <table className="table table-dark" style={{opacity:0.55}}>
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-  </tbody>
-</table>
-  </div>
-    </>
-  )
+
+import React from 'react';
+import base_url from '../api/bootapi';
+import UserService from '../service/UserService';
+
+class TAViewCustBooking extends React.Component {
+
+    constructor(props){
+        super(props)
+        this.state = {
+            users:[]
+        }
+    }
+
+    componentDidMount(){
+      UserService.getCustBookings().then((response) => {
+            this.setState({ users: response.data})
+            console.log(response.data)
+        });
+    }
+
+    render (){
+        return (
+            <div>
+              <p style={{color:"white"}}>{sessionStorage.getItem("emailId")}</p>
+                <h1 className = "text-center" style={{color:"white"}}>Customer Bookings List</h1>
+                <table className = "table table-dark" style={{opacity:0.55}}>
+                    <thead>
+                        <tr>
+
+                            <td>Place Id</td>
+                            <td>Email Id</td>
+                            <td>People count</td>
+                            <td>Contact No</td>
+                            <td>Address</td>
+                            <td>Approved</td>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        {
+                            this.state.users.map(
+                                user => 
+                                <tr key = {user.id}>
+                                     <td> {user.pId}</td>   
+                                     <td> {user.emailID}</td>   
+                                     <td> {user.countOfPpl}</td>   
+                                     <td> {user.contactNo}</td>
+                                     <td> {user.address}</td>
+                                     <td> {user.approved}</td>
+                                     <td> <button className='btn btn-primary shadow rounded'>Approve</button></td>   
+                                </tr>
+                            )
+                        }
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        )
+    }
 }
+
+export default TAViewCustBooking
+
