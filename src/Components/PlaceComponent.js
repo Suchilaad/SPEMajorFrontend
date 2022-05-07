@@ -1,6 +1,7 @@
 import 'animate.css';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import UserService from '../service/UserService';
 
 class PlaceComponent extends React.Component {
@@ -35,7 +36,7 @@ class PlaceComponent extends React.Component {
                                     <img src={trek.imageId} className="card-img-top mx-2 my-2" style={{width:"400px"}}/>
                                       <h5 className="card-title">{trek.trekName},{trek.placeName}</h5>
                                       <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                      <a href='/bookNow'><button className='btn btn-primary' style={{borderRadius:'12px'}} onClick={()=>{setValue(trek.pId)}}>Book now</button></a>
+                                      <Link to='/bookNow'><button className='btn btn-primary' style={{borderRadius:'12px'}} onClick={()=>{setValue(trek.pId)}}>Book now</button></Link>
                                     </div>
                                   </div>
                                 </div>

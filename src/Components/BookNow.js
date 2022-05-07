@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import base_url from "../api/bootapi";
 import BookedSuccess from "./BookedSuccess";
+import { Link } from "react-router-dom";
 
 export default function BookNow(props) {
   const [loginData, setLoginData] = useState({});
@@ -70,7 +71,7 @@ export default function BookNow(props) {
             <input
               type="inputAddress"
               onChange={(e) => {
-                setLoginData({ ...loginData, address: e.target.value,approved:"no" });
+                setLoginData({ ...loginData, address: e.target.value,approved:"wait" });
               }}
               placeholder="Enter address"
               className="form-control"

@@ -1,6 +1,7 @@
 import 'animate.css';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import UserService from '../service/UserService';
 
 class ViewTreks extends React.Component {
@@ -32,7 +33,7 @@ class ViewTreks extends React.Component {
                                     <img src={trek.imageId} className="card-img-top mx-2 my-2" style={{width:"400px"}}/>
                                       <h5 className="card-title">{trek.trekName},{trek.placeName}</h5>
                                       <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                      <a href="#" className="btn btn-primary shadow float-middle" style={{borderRadius:"12px"}}>Book now</a>
+                                      <Link to="#" className="btn btn-primary shadow float-middle" style={{borderRadius:"12px"}}>Book now</Link>
                                     </div>
                                   </div>
                                 </div>

@@ -3,7 +3,8 @@ import axios from 'axios'
 
 const USERS_REST_API_URL = 'http://localhost:8080/guideget';
 const JOURNEY_REST_API_URL="http://localhost:8080/treks";
-const CUST_BOOKINGS=`http://localhost:8080/booking/vg123@gmail.com`;
+const CUST_BOOKINGS=`http://localhost:8080/booking/${sessionStorage.getItem("emailId")}`;
+const BOOKINGS=`http://localhost:8080/bookingdetailscust/${sessionStorage.getItem("emailId")}`;
 class UserService {
 
     getUsers(){
@@ -14,6 +15,9 @@ class UserService {
     }
     getCustBookings(){
         return axios.get(CUST_BOOKINGS);
+    }
+    getBookings(){
+        return axios.get(BOOKINGS);
     }
 
 }
