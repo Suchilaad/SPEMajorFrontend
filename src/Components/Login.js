@@ -23,6 +23,16 @@ const [loginData,setLoginData]=useState({});
     }
     const [err,setErr]=useState("");
     const postDataToServer=(data)=>{
+      
+      if(data.role==="admin"){
+        if(data.password=="root" && data.emailId=="admin@gmail.com"){
+          window.open("/adminHome","_self");
+        }else{
+          setErr("Invalid Id/Password");
+          showAlert("Invalid Id/Password","Success");
+        }
+      }
+      else{
       console.log(`${base_url}/${data.role}/signin`)
       axios.post(`${base_url}/${data.role}/signin`,data).then(
         (response)=>{
@@ -31,8 +41,6 @@ const [loginData,setLoginData]=useState({});
             if(response.data==="Username or Password don't match!"){
                 setErr("Invalid Id/Password");
                 showAlert("Invalid Id/Password","Success");
-            }else if(data.role==="admin"){
-              {window.open("/adminHome","_self");}
             }else if(data.role==="customer"){
               {window.open("/customerHome","_self");}
             }else if(data.role==="guide"){
@@ -42,7 +50,7 @@ const [loginData,setLoginData]=useState({});
             console.log(error)
             console.log("error!")
         }
-      );
+      );}
     }
     return (
       <>

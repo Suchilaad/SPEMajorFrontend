@@ -18,7 +18,7 @@ class ViewCustomerBookings extends React.Component {
       UserService.getBookings().then((response) => {
             this.setState({ users: response.data})
             console.log(response.data)
-        });
+        },(error)=>{console.log(error);console.log("Error!")});
     }
 
     render (){
@@ -42,14 +42,14 @@ class ViewCustomerBookings extends React.Component {
                         {
                             this.state.users.map(
                                 user => 
-                                <tr key = {user.id}>
-                                     <td>{user.id}</td>
-                                     <td> {user.pId}</td>   
-                                     <td> {user.emailID}</td>   
-                                     <td> {user.countOfPpl}</td>   
-                                     <td> {user.contactNo}</td>
-                                     <td> {user.address}</td>
-                                     <td> {user.approved}</td>
+                                <tr key = {user[0].id}>
+                                     <td>{user[0].id}</td>
+                                     <td> {user[0].pId}</td>   
+                                     <td> {user[0].emailID}</td>   
+                                     <td> {user[0].countOfPpl}</td>   
+                                     <td> {user[0].contactNo}</td>
+                                     <td> {user[1].address}</td>
+                                     <td> {user[0].approved}</td>
                                 </tr>
                             )
                         }

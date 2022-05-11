@@ -64,7 +64,7 @@ export default function SignUp() {
       <div className="mx-5">
       <label htmlFor="exampleInputPassword1" className="form-label"></label>
         <select id="role" onChange={(e)=>{setLoginData({...loginData,gender:e.target.value})}} className="form-control shadow rounded" aria-label="Default select example">
-  <option defaultValue="Select role">Select role</option>
+  <option defaultValue="Select gender">Select gender</option>
   <option value="Male">Male</option>
   <option value="Female">Female</option>
   <option value="Other">Other</option>

@@ -18,8 +18,10 @@ export default function AddGuides() {
   }
   const[err,setErr]=useState("");
   const postDataToServer=(data)=>{
-      axios.post(`${base_url}/guidesave`,data)
-      window.open('/viewGuides',"_self");
+      axios.post(`${base_url}/guidesave`,data).then((response)=>{window.open('/viewGuides',"_self");
+      console.log("Success!")}
+      ,(error)=>{console.log("Error!")})
+      
   }
       return(
           <>
