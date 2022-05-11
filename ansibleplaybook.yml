@@ -15,6 +15,6 @@
     - name: Copy docker compose file to host
       copy:
         src: docker-compose.yml
-        dest: docker-compose.yml
+        dest: /home/shubham/docker-compose.yml
     - name: Run docker compose
       shell: docker-compose up
