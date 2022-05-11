@@ -1,0 +1,2 @@
+[ubuntulocalhost]
+172.16.135.26 ansible_user=shubham
