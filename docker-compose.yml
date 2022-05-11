@@ -2,7 +2,7 @@
 version: '3'
 services:
   frontend:
-    image: frontendimage
+    image: shuddd/frontend
     ports: 
       - 4200:3000
     depends_on: 
@@ -10,7 +10,7 @@ services:
     networks: 
       - server
   backend: 
-    image: backendimage
+    image: shuddd/backend
     ports: 
       - 8085:8085
     depends_on: 
