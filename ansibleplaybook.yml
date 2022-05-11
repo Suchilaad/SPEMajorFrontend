@@ -14,7 +14,7 @@
         name: shuddd/frontend
     - name: Copy docker compose file to host
       copy:
-        src: ./docker-compose.yml
-        dest: ./docker-compose.yml
+        src: docker-compose.yml
+        dest: docker-compose.yml
     - name: Run docker compose
       shell: docker-compose up
