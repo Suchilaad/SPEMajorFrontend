@@ -2,8 +2,8 @@
 - name: Trek Buddy app
   hosts: all
   tasks: 
-    - name: Stopping already running compose
-      shell: docker-compose down
+#    - name: Stopping already running compose
+#      shell: docker-compose down
     - name: Remove already existing image
       docker_image: 
         name: shuddd/frontend
@@ -17,4 +17,4 @@
         src: docker-compose.yml
         dest: /home/shubham/docker-compose.yml
     - name: Run docker compose
-      shell: ls
+      shell: docker-compose -f home/shubham/docker-compose.yml up -d
