@@ -17,4 +17,4 @@
         src: docker-compose.yml
         dest: /home/shubham/docker-compose.yml
     - name: Run docker compose
-      shell: docker-compose -f home/shubham/docker-compose.yml up -d
+      shell: docker-compose -f /home/shubham/docker-compose.yml up -d
