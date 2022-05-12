@@ -16,7 +16,7 @@ export default function AdminNavbar() {
           <Link className="nav-a active" to="/adminHome"><button type="button" className="btn btn-outline-light shadow mx-3"  style={{borderRadius:'12px'}} >Home</button></Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-a active" to="/viewGuides"><button type="button" className="btn btn-outline-light shadow mx-3" style={{borderRadius:'12px'}} >View Guides</button></Link>
+          <Link className="nav-a active" to="/viewGuides"><button type="button" className="btn btn-outline-light shadow mx-3" style={{borderRadius:'12px'}} >ViewGuides</button></Link>
         </li>
         <li className="nav-item">
           <Link className="nav-a active" to="/addGuides"><button type="button" className="btn btn-outline-light shadow mx-3" style={{borderRadius:'12px'}} >Add Guides</button></Link>
